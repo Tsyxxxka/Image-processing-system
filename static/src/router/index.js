@@ -9,6 +9,7 @@ import Sharpen from "@/components/pages/Sharpen"
 import Morphological from "@/components/pages/Morphological"
 import Noise from "@/components/pages/Noise"
 import Repair from "@/components/pages/Repair"
+import Style from "@/components/pages/StyleTransfer"
 
 Vue.use(Router)
 
@@ -61,6 +62,11 @@ export default new Router({
       path: '/fix/repair',
       name: 'Repair',
       component: Repair
+    },
+    {
+      path: '/style_transfer',
+      name: 'Style',
+      component: Style
     }
   ]
 })

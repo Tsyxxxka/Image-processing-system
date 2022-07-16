@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-divider content-position="right">李亦杨，刁泽皓</el-divider>
+    <el-divider content-position="right">滕思怡，刘雨杰</el-divider>
   </div>
 </template>
 

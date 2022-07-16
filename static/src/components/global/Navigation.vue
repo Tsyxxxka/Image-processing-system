@@ -11,51 +11,63 @@
         <span slot="title">主页</span>
       </el-menu-item>
 
-      <el-menu-item index="/basic_func">
-        <i class="el-icon-picture-outline"></i>
-        <span slot="title">基础功能</span>
-      </el-menu-item>
-
-      <el-menu-item index="/histogram">
-        <i class="el-icon-s-data"></i>
-        <span slot="title">图像分析</span>
-      </el-menu-item>
-
-      <el-menu-item index="/segmentation">
-        <i class="el-icon-scissors"></i>
-        <span slot="title">图像分割</span>
-      </el-menu-item>
-
-      <el-submenu index="/smooth_sharpen">
+      <el-submenu>
         <template slot="title">
-          <i class="el-icon-s-operation"></i>
-          <span slot="title">图像平滑与锐化</span>
+          <i class="el-icon-picture-outline"></i>
+          <span slot="title">图像处理功能</span>
         </template>
 
-        <el-menu-item index="/smooth_sharpen/smooth">图像平滑</el-menu-item>
-        <el-menu-item index="/smooth_sharpen/sharpen">图像锐化</el-menu-item>
+        <el-menu-item index="/basic_func">
+          <i class="el-icon-picture-outline"></i>
+          <span slot="title">基础功能</span>
+        </el-menu-item>
 
-      </el-submenu>
+        <el-menu-item index="/histogram">
+          <i class="el-icon-s-data"></i>
+          <span slot="title">图像分析</span>
+        </el-menu-item>
 
-      <el-menu-item index="/morphological">
-        <i class="el-icon-magic-stick"></i>
-        <span slot="title">图像形态学</span>
-      </el-menu-item>
+        <el-menu-item index="/segmentation">
+          <i class="el-icon-scissors"></i>
+          <span slot="title">图像分割</span>
+        </el-menu-item>
 
-      <el-submenu index="/fix">
-        <template slot="title">
-          <i class="el-icon-s-opportunity"></i>
-        <span slot="title">图像修复</span>
-        </template>
+        <el-submenu index="/smooth_sharpen">
+          <template slot="title">
+            <i class="el-icon-s-operation"></i>
+            <span slot="title">图像平滑与锐化</span>
+          </template>
 
-        <el-menu-item index="/fix/noise">添加噪声</el-menu-item>
-        <el-menu-item index="/fix/repair">图像去噪</el-menu-item>
+          <el-menu-item index="/smooth_sharpen/smooth">图像平滑</el-menu-item>
+          <el-menu-item index="/smooth_sharpen/sharpen">图像锐化</el-menu-item>
 
+        </el-submenu>
+
+        <el-menu-item index="/morphological">
+          <i class="el-icon-magic-stick"></i>
+          <span slot="title">图像形态学</span>
+        </el-menu-item>
+
+        <el-submenu index="/fix">
+          <template slot="title">
+            <i class="el-icon-s-opportunity"></i>
+          <span slot="title">图像修复</span>
+          </template>
+
+          <el-menu-item index="/fix/noise">添加噪声</el-menu-item>
+          <el-menu-item index="/fix/repair">图像去噪</el-menu-item>
+
+        </el-submenu>
       </el-submenu>
 
       <el-menu-item @click.native="drawer = true">
         <i class="el-icon-upload"></i>
         <span slot="title">图片上传</span>
+      </el-menu-item>
+
+      <el-menu-item index="/style_transfer">
+        <i class="el-icon-magic-stick"></i>
+        <span slot="title">图片风格迁移</span>
       </el-menu-item>
 
       <el-drawer
