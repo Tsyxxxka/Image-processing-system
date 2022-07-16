@@ -1,0 +1,12 @@
+# Python virtual environment
+/venv/
+# Vue node.js node_modules
+/static/.idea/
+/static/node_modules/
+/static/dist/
+# Python users' pictures
+/apps/assets/
+!/apps/assets/.gitkeep
+# Python users' result-pictures
+/apps/results/
+!/apps/results/.gitkeep
