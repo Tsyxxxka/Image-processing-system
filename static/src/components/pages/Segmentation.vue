@@ -423,122 +423,7 @@
                          @click="cancel">完成
               </el-button>
             </el-tab-pane>
-            <el-tab-pane label="HoughLines 线条变化检测">
-              <el-steps :active="hough_lines_active" finish-status="success" simple style="margin-top: 10px">
-                <el-step title="选择图片"></el-step>
-                <el-step title="输入参数"></el-step>
-                <el-step title="处理图片"></el-step>
-              </el-steps>
-
-              <div v-show="hough_lines_active === 0" style="margin-top: 20px;">
-                <PictureChooseOne ref="hough_linesSelection"/>
-              </div>
-
-              <div v-show="hough_lines_active === 1"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div style="margin-left: 20%; margin-right: 20%">
-                  <el-form :model="hough_linesForm" class="demo-form-inline">
-                    <el-form-item label="输出图像名称"
-                                  label-width="30%"
-                                  :rules="[
-                      { required: true, message: '名称不能为空'}
-                      ]"
-                                  style="align-content: center; margin-left: 10%; margin-right: 10%; width: 60%">
-                      <el-input v-model="hough_linesForm.res_name">
-                        <template slot="append">.jpg</template>
-                      </el-input>
-                    </el-form-item>
-                  </el-form>
-                </div>
-              </div>
-
-              <div v-show="hough_lines_active === 2"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div>
-                  <span class="demonstration">原图片</span>
-                  <br>
-                  <img :src="this.displayImg[0].fileUrl" alt=""
-                       style="width: auto; height: auto; max-width: 400px; max-height: 300px; margin-top: 30px">
-                </div>
-              </div>
-
-              <div v-show="hough_lines_active === 3"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div>
-                  <span class="demonstration">结果图片</span>
-                  <br>
-                  <img :src="this.processResult.result_name" alt=""
-                       style="width: auto; height: auto; max-width: 400px; max-height: 300px; margin-top: 30px">
-                </div>
-              </div>
-
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
-              <el-button v-show="hough_lines_active <= 2" :loading="hough_linesLoad" style="margin-left: 10px; margin-top: 10px;"
-                         @click="hough_lines_next">下一步
-              </el-button>
-              <el-button v-show="hough_lines_active >= 3" :loading="hough_linesLoad" style="margin-left: 10px; margin-top: 10px;"
-                         @click="cancel">完成
-              </el-button>
-
-            </el-tab-pane>
-            <el-tab-pane label="HoughLinesP 线条变化检测">
-              <el-steps :active="hough_linesP_active" finish-status="success" simple style="margin-top: 10px">
-                <el-step title="选择图片"></el-step>
-                <el-step title="输入参数"></el-step>
-                <el-step title="处理图片"></el-step>
-              </el-steps>
-
-              <div v-show="hough_linesP_active === 0" style="margin-top: 20px;">
-                <PictureChooseOne ref="hough_linesPSelection"/>
-              </div>
-
-              <div v-show="hough_linesP_active === 1"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div style="margin-left: 20%; margin-right: 20%">
-                  <el-form :model="hough_linesPForm" class="demo-form-inline">
-                    <el-form-item label="输出图像名称"
-                                  label-width="30%"
-                                  :rules="[
-                      { required: true, message: '名称不能为空'}
-                      ]"
-                                  style="align-content: center; margin-left: 10%; margin-right: 10%; width: 60%">
-                      <el-input v-model="hough_linesPForm.res_name">
-                        <template slot="append">.jpg</template>
-                      </el-input>
-                    </el-form-item>
-                  </el-form>
-                </div>
-              </div>
-
-              <div v-show="hough_linesP_active === 2"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div>
-                  <span class="demonstration">原图片</span>
-                  <br>
-                  <img :src="this.displayImg[0].fileUrl" alt=""
-                       style="width: auto; height: auto; max-width: 400px; max-height: 300px; margin-top: 30px">
-                </div>
-              </div>
-
-              <div v-show="hough_linesP_active === 3"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div>
-                  <span class="demonstration">结果图片</span>
-                  <br>
-                  <img :src="this.processResult.result_name" alt=""
-                       style="width: auto; height: auto; max-width: 400px; max-height: 300px; margin-top: 30px">
-                </div>
-              </div>
-
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
-              <el-button v-show="hough_linesP_active <= 2" :loading="hough_linesPLoad" style="margin-left: 10px; margin-top: 10px;"
-                         @click="hough_linesP_next">下一步
-              </el-button>
-              <el-button v-show="hough_linesP_active >= 3" :loading="hough_linesPLoad" style="margin-left: 10px; margin-top: 10px;"
-                         @click="cancel">完成
-              </el-button>
-
-            </el-tab-pane>
+            
           </el-tabs>
         </el-main>
 
@@ -561,7 +446,7 @@ export default {
   data() {
     return {
       headmsg: '图像分割',
-      intromsg: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0主要包含了图像的边缘检测与线条变化检测等功能。',
+      intromsg: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0主要包含了图像的边缘检测功能。',
       selection: [],
       displayImg: [
         {

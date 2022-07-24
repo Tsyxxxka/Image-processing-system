@@ -10,3 +10,7 @@
 # Python users' result-pictures
 /apps/results/
 !/apps/results/.gitkeep
+
+
+.pyc
+__pycache__

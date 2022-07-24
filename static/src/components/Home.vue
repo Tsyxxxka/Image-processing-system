@@ -1,95 +1,63 @@
 <template>
-  <div class="basic" style="background: #fff; min-height: 100%">
+  <div style="background: #fff; min-height: 100%">
     <el-head>
       <Navigation/>
     </el-head>
     <el-container style="position: absolute; height: 95%; width: 100%; border: 0">
       <el-container style="margin-top: 5%; margin-right: 236px; margin-left: 236px">
         <el-header style="text-align: center; font-size: 36px">
-          <div class="heading">
+          <div class="content-title">
             {{ headmsg }}
           </div>
         </el-header>
-
-        <el-main style="text-align: left; font-size: 18px">
-          <el-divider content-position="left">项目概览</el-divider>
-          <p style="margin-left: 2em; margin-bottom: 0; line-height: 2em">
-            {{ intromsg }}
+        <div class="content">
+          <el-carousel :interval="4000" type="card" height="400px" indicator-position="outside">
+            <el-carousel-item v-for="item in imgs" v-bind:key="item">
+              <img class="bannerImg" :src="item.url">
+            </el-carousel-item>
+          </el-carousel>
+          <el-divider content-position="left">项目小组成员</el-divider>
+          <el-table :data="tableData" style="width: 1000px; margin-left:30px; font-size: 18px;">
+            <el-table-column prop="name" label="姓名" width="200" />
+            <el-table-column prop="schoolID" label="学号" width="200" />
+            <el-table-column prop="mail" label="邮箱" width="280" />
+            <el-table-column prop="work" label="主要工作" width="300" />
+          </el-table>
+          <el-divider content-position="left">项目主要功能</el-divider>
+          <p style="text-align: left; font-size: 18px;margin-left: 2em; margin-bottom: 0; line-height: 2em">
+            项目最终完成难度系数： 1.5
             <br>
-            可以进行基础的图片处理功能，如：翻转、旋转、灰度化、二值化、反色、去噪、边缘检测等。
-          </p>
-          <el-divider content-position="left">项目介绍</el-divider>
-          <p style="margin-left: 2em; margin-top: 0; line-height: 2em">
-            项目成员：滕思怡 10190350453，刘雨杰
+            在实现课堂基础要求的图像处理功能之外，还通过阅读相关文献、借鉴相关开源代码，实现了图像的风格迁移功能，对项目的现实应用有了较为明确的定位。
             <br>
-            项目结构:
+            项目基础功能：
+            <br>
+            图片上传
+            <br>
+            图像编辑：翻转、平移、旋转、放缩
+            <br>
+            图像转换：图像灰度化、二值化
+            <br>
+            图像分析：灰度直方图、彩色直方图
+            <br>
+            图像边缘检测：Robert、Sobel、Laplacian、LoG、Canny
+            <br>
+            图像增强：平滑、锐化
+            <br>
+            图像形态学：腐蚀、膨胀、开运算、闭运算
+            <br>
+            图像风格迁移
           </p>
-          <div class="code">
-            <div class="code_inline">
-              - \apps \\后端Python项目代码
-              <br>
-              - \static \\前端Vue项目代码
-            </div>
-          </div>
-          <p style="margin-left: 2em; margin-bottom: 0; line-height: 2em">
-            项目部署位置：
+          <el-divider content-position="left">项目主要技术栈</el-divider>
+          <p style="text-align: left; font-size: 18px;margin-left: 2em; margin-bottom: 0; line-height: 2em">
+            前端：Vue，ElementUI，Vue-Router
+            <br>
+            后端：Flask，Python，open-cv，tensorflow，numpy，matplotLib，Pillow
           </p>
-          <ul style="margin-top: 0; margin-left: 2em; margin-bottom: 0; line-height: 2em; list-style-type:circle">
-            <li>前端端口：9091</li>
-            <li>后端端口：5000</li>
-          </ul>
-          <p style="margin-left: 2em; margin-top: 0; margin-bottom: 0; line-height: 2em">
-            项目环境:
+          <el-divider content-position="left">项目快速启动</el-divider>
+          <p style="text-align: left; font-size: 18px;margin-left: 2em; margin-bottom: 0; line-height: 2em">
+            bash run.sh
           </p>
-          <ul style="margin-top: 0; margin-left: 2em; line-height: 2em; list-style-type:circle">
-            <li>前端</li>
-          </ul>
-          <div class="front_env">
-            <div class="front_env_inline">
-              - Vue: 2.6.11
-              <br>
-              - element-ui: 2.15.8
-              <br>
-              - vue-router: 3.5.4
-            </div>
-          </div>
-          <ul style="margin-left: 2em; line-height: 2em; list-style-type:circle">
-            <li>后端：</li>
-          </ul>
-          <div class="back_env">
-            <div class="back_env_inline">
-              - Python: 3.8
-              <br>
-              - Flask: 2.1.2
-              <br>
-              - Flask-Cors: 3.0.10
-              <br>
-              - Pillow: 9.1.1
-              <br>
-              - matplotLib: 3.5.2
-              <br>
-              - numpy: 1.22.4
-              <br>
-              - opencv-python: 4.55.64
-            </div>
-          </div>
-          <p style="margin-left: 2em; margin-top: 0; margin-bottom: 0; line-height: 2em">
-            需要注意：/apps/assets/default_usage/default_pic.jpg与/apps/results/default_usage/default_res.jpg不可删除。
-          </p>
-          <el-divider content-position="left">项目功能</el-divider>
-          <p style="margin-left: 2em; margin-top: 0; margin-bottom: 0; line-height: 2em">
-            项目功能：
-          </p>
-          <ul style="margin-top: 0; margin-left: 2em; line-height: 2em; list-style-type:circle">
-            <li>基础功能：灰度化、二值化、逻辑运算（基于灰度图）、四则运算、翻转、平移、放缩</li>
-            <li>图像分析：灰度直方图、彩色直方图</li>
-            <li>图像分割：基于多种算子的边缘检测、线条变化检测</li>
-            <li>图像平滑和锐化：针对空域与频域的多种平滑和锐化功能</li>
-            <li>图像形态学：腐蚀、膨胀、开运算、闭运算</li>
-            <li>图像修复：添加高斯噪声或椒盐噪声、均值滤波、统计滤波、频域滤波</li>
-          </ul>
-        </el-main>
-
+        </div>
         <el-footer height="10px">
           <Copyright/>
         </el-footer>
@@ -108,7 +76,25 @@ export default {
   data() {
     return {
       headmsg: '图像处理系统',
-      intromsg: '一个简单的图像处理系统。'
+      intromsg: '一个简单的图像处理系统。',
+      tableData : [{
+        name: '滕思怡',
+        schoolID : '10190350453',
+        mail:'tsyxxxka@gmail.com',
+        work: '基础功能实现与图片风格迁移',
+      },
+      {
+        name: '刘雨杰',
+        schoolID : '',
+        mail:'',
+        work: '相关应用调研与基础功能实现',
+      }],
+      imgs: [
+        {url: require('../assets/picture/front1.jpg'), link: '/content1'},
+        {url: require('../assets/picture/front2.png'), link: '/content2'},
+        {url: require('../assets/picture/front3.jpeg'), link: '/content3'},
+        {url: require('../assets/picture/front4.jpg'), link: '/content4'}
+      ]
     }
   },
   methods: {},
@@ -160,5 +146,21 @@ export default {
 
 .back_env .back_env_inline {
   margin: 2em;
+}
+
+.content {
+    padding: 25px 25px;
+    margin: 25px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    border: #e3e1e4 2px solid;
+    font-size: 18px;
+}
+
+.content-title {
+    color: #335A66;
+    font-size: 40px;
+    border: none;
+    text-align: center;
 }
 </style>

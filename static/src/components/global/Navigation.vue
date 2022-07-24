@@ -19,7 +19,7 @@
 
         <el-menu-item index="/basic_func">
           <i class="el-icon-picture-outline"></i>
-          <span slot="title">基础功能</span>
+          <span slot="title">图像编辑</span>
         </el-menu-item>
 
         <el-menu-item index="/histogram">
