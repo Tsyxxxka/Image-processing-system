@@ -1,10 +1,10 @@
 <template>
-  <div style="background: #fff; min-height: 100%">
+  <div style="background: #e9e9e9; min-height: 100%">
     <el-head>
       <Navigation/>
     </el-head>
-    <el-container style="position: absolute; height: 95%; width: 100%; border: 0">
-      <el-container style="margin-top: 5%; margin-right: 236px; margin-left: 236px">
+    <el-container style="position: absolute; height: 100%; width: 100%; border: 0">
+      <el-container style="margin-top: 2%; margin-right: 300px; margin-left: 300px">
         <el-header style="text-align: center; font-size: 36px">
           <div class="content-title">
             {{ headmsg }}
@@ -45,7 +45,7 @@
             <br>
             图像形态学：腐蚀、膨胀、开运算、闭运算
             <br>
-            图像风格迁移
+            图像风格迁移：实现了任意风格和任意内容图像的风格迁移功能
           </p>
           <el-divider content-position="left">项目主要技术栈</el-divider>
           <p style="text-align: left; font-size: 18px;margin-left: 2em; margin-bottom: 0; line-height: 2em">
@@ -91,8 +91,8 @@ export default {
       }],
       imgs: [
         {url: require('../assets/picture/front1.jpg'), link: '/content1'},
-        {url: require('../assets/picture/front2.png'), link: '/content2'},
-        {url: require('../assets/picture/front3.jpeg'), link: '/content3'},
+        {url: require('../assets/picture/front2.jpg'), link: '/content2'},
+        {url: require('../assets/picture/front3.jpg'), link: '/content3'},
         {url: require('../assets/picture/front4.jpg'), link: '/content4'}
       ]
     }
@@ -163,4 +163,5 @@ export default {
     border: none;
     text-align: center;
 }
+
 </style>

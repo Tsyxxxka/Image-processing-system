@@ -1,5 +1,6 @@
 <template>
-  <div style="width: 100%; max-height: 100%">
+  <div style="width: 100%; max-height: 100%; margin-left: 250px;">
+    <el-button type="text" @click="freshData()" style="margin-top: 15px">刷新</el-button>
     <el-table
         ref="multipleTable"
         :data="fileList"
@@ -32,8 +33,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-button @click="freshData()" style="margin-top: 15px">刷新</el-button>
-    <el-button @click="toggleSelection()" style="margin-top: 15px">取消选择</el-button>
+    
   </div>
 </template>
 

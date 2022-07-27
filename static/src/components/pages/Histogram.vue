@@ -1,11 +1,11 @@
 <template>
-  <div class="basic" style="background: #fff; min-height: 100%">
+  <div class="basic" style="background: #e9e9e9; min-height: 100%">
     <el-head>
       <Navigation/>
     </el-head>
-    <el-container style="position: absolute; height: 95%; width: 100%; border: 0">
+    <el-container style="position: absolute; height: 100%; width: 100%; border: 0">
 
-      <el-container style="margin-top: 5%; margin-right: 236px; margin-left: 236px">
+      <el-container style="margin-top: 5%; margin-right: 300px; margin-left: 300px">
         <el-header style="text-align: center; font-size: 36px">
           <div class="heading">
             {{ headmsg }}
@@ -13,11 +13,10 @@
         </el-header>
 
         <el-main style="text-align: left; font-size: 18px">
-          <el-divider content-position="left">直方图分析</el-divider>
           {{ intromsg }}
           <el-tabs type="border-card" style="margin-top: 30px; min-height: 80%">
             <el-tab-pane label="灰度直方图">
-              <el-steps :active="gray_hist_active" finish-status="success" simple style="margin-top: 10px">
+              <el-steps :active="gray_hist_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -65,7 +64,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
+              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="gray_hist_active <= 2" :loading="gray_histLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="gray_hist_next">下一步
               </el-button>
@@ -75,7 +74,7 @@
             </el-tab-pane>
 
             <el-tab-pane label="彩色直方图">
-              <el-steps :active="bgr_hist_active" finish-status="success" simple style="margin-top: 10px">
+              <el-steps :active="bgr_hist_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -123,7 +122,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
+              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="bgr_hist_active <= 2" :loading="bgr_histLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="bgr_hist_next">下一步
               </el-button>
@@ -154,7 +153,6 @@ export default {
   data() {
     return {
       headmsg: '图像分析',
-      intromsg: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0主要包含了图像的灰度直方图分析与彩色直方图分析等功能。',
       selection: [],
       displayImg: [
         {

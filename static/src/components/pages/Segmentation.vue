@@ -1,11 +1,11 @@
 <template>
-  <div class="basic" style="background: #fff; min-height: 100%">
+  <div class="basic" style="background: #e9e9e9; min-height: 100%">
     <el-head>
       <Navigation/>
     </el-head>
-    <el-container style="position: absolute; height: 95%; width: 100%; border: 0">
+    <el-container style="position: absolute; height: 100%; width: 100%; border: 0">
 
-      <el-container style="margin-top: 5%; margin-right: 236px; margin-left: 236px">
+      <el-container style="margin-top: 5%; margin-right: 300px; margin-left: 300px">
         <el-header style="text-align: center; font-size: 36px">
           <div class="heading">
             {{ headmsg }}
@@ -13,11 +13,10 @@
         </el-header>
 
         <el-main style="text-align: left; font-size: 18px">
-          <el-divider content-position="left">边缘检测</el-divider>
           {{ intromsg }}
           <el-tabs type="border-card" style="margin-top: 30px; min-height: 80%">
             <el-tab-pane label="Roberts 算子">
-              <el-steps :active="roberts_active" finish-status="success" simple style="margin-top: 10px">
+              <el-steps :active="roberts_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -96,7 +95,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
+              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="roberts_active <= 2" :loading="robertsLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="roberts_next">下一步
               </el-button>
@@ -105,7 +104,7 @@
               </el-button>
             </el-tab-pane>
             <el-tab-pane label="Sobel 算子">
-              <el-steps :active="sobel_active" finish-status="success" simple style="margin-top: 10px">
+              <el-steps :active="sobel_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -184,7 +183,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
+              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="sobel_active <= 2" :loading="sobelLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="sobel_next">下一步
               </el-button>
@@ -193,7 +192,7 @@
               </el-button>
             </el-tab-pane>
             <el-tab-pane label="Laplacian 算子">
-              <el-steps :active="laplacian_active" finish-status="success" simple style="margin-top: 10px">
+              <el-steps :active="laplacian_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -276,7 +275,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
+              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="laplacian_active <= 2" :loading="laplacianLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="laplacian_next">下一步
               </el-button>
@@ -285,7 +284,7 @@
               </el-button>
             </el-tab-pane>
             <el-tab-pane label="LoG 算子">
-              <el-steps :active="LoG_active" finish-status="success" simple style="margin-top: 10px">
+              <el-steps :active="LoG_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -333,7 +332,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
+              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="LoG_active <= 2" :loading="LoGLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="LoG_next">下一步
               </el-button>
@@ -343,7 +342,7 @@
 
             </el-tab-pane>
             <el-tab-pane label="Canny 算子">
-              <el-steps :active="canny_active" finish-status="success" simple style="margin-top: 10px">
+              <el-steps :active="canny_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -415,7 +414,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 10px;" @click="cancel">取消</el-button>
+              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="canny_active <= 2" :loading="cannyLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="canny_next">下一步
               </el-button>
@@ -446,7 +445,6 @@ export default {
   data() {
     return {
       headmsg: '图像分割',
-      intromsg: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0主要包含了图像的边缘检测功能。',
       selection: [],
       displayImg: [
         {
