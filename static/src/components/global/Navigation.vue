@@ -29,7 +29,7 @@
 
         <el-menu-item index="/segmentation">
           <i class="el-icon-scissors"></i>
-          <span slot="title">图像分割</span>
+          <span slot="title">图像边缘检测</span>
         </el-menu-item>
 
         <el-submenu index="/smooth_sharpen">

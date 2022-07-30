@@ -86,7 +86,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="erode_active <= 2" :loading="erodeLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="erode_next">下一步
               </el-button>
@@ -165,7 +165,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="dilate_active <= 2" :loading="dilateLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="dilate_next">下一步
               </el-button>
@@ -244,7 +244,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="mor_open_active <= 2" :loading="mor_openLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="mor_open_next">下一步
               </el-button>
@@ -323,7 +323,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="mor_close_active <= 2" :loading="mor_closeLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="mor_close_next">下一步
               </el-button>

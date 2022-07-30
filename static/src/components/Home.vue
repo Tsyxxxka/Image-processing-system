@@ -3,7 +3,7 @@
     <el-head>
       <Navigation/>
     </el-head>
-    <el-container style="position: absolute; height: 100%; width: 100%; border: 0">
+    <el-container style="height: 100%; width: 100%; border: 0">
       <el-container style="margin-top: 2%; margin-right: 300px; margin-left: 300px">
         <el-header style="text-align: center; font-size: 36px">
           <div class="content-title">
@@ -85,8 +85,8 @@ export default {
       },
       {
         name: '刘雨杰',
-        schoolID : '',
-        mail:'',
+        schoolID : '10194900441',
+        mail:'10194900441@stu.ecnu.edu.cn',
         work: '相关应用调研与基础功能实现',
       }],
       imgs: [

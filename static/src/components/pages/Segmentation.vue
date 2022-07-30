@@ -95,7 +95,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="roberts_active <= 2" :loading="robertsLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="roberts_next">下一步
               </el-button>
@@ -183,7 +183,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="sobel_active <= 2" :loading="sobelLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="sobel_next">下一步
               </el-button>
@@ -275,7 +275,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="laplacian_active <= 2" :loading="laplacianLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="laplacian_next">下一步
               </el-button>
@@ -332,7 +332,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="LoG_active <= 2" :loading="LoGLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="LoG_next">下一步
               </el-button>
@@ -414,7 +414,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="canny_active <= 2" :loading="cannyLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="canny_next">下一步
               </el-button>
@@ -444,7 +444,7 @@ export default {
   name: "Segmentation",
   data() {
     return {
-      headmsg: '图像分割',
+      headmsg: '图像边缘检测',
       selection: [],
       displayImg: [
         {

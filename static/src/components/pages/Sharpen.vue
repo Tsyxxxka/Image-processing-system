@@ -15,7 +15,7 @@
         <el-main style="text-align: left; font-size: 18px">
           {{ intromsg }}
           <el-tabs type="border-card" style="margin-top: 30px; min-height: 80%">
-            <el-tab-pane label="Roberts 算子">
+            <el-tab-pane label="Roberts 梯度算子">
               <el-steps :active="robert_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
@@ -64,7 +64,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="robert_active <= 2" :loading="robertLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="robert_next">下一步
               </el-button>
@@ -73,7 +73,7 @@
               </el-button>
 
             </el-tab-pane>
-            <el-tab-pane label="Laplacian 算子">
+            <el-tab-pane label="Laplacian 梯度算子">
               <el-steps :active="laplacian_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
@@ -122,7 +122,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="laplacian_active <= 2" :loading="laplacianLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="laplacian_next">下一步
               </el-button>
@@ -131,7 +131,7 @@
               </el-button>
 
             </el-tab-pane>
-            <el-tab-pane label="Sobel 算子">
+            <el-tab-pane label="Sobel 梯度算子">
               <el-steps :active="sobel_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
@@ -180,7 +180,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="sobel_active <= 2" :loading="sobelLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="sobel_next">下一步
               </el-button>
@@ -189,7 +189,7 @@
               </el-button>
 
             </el-tab-pane>
-            <el-tab-pane label="Prewitt 算子">
+            <el-tab-pane label="Prewitt 梯度算子">
               <el-steps :active="prewitt_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
@@ -238,7 +238,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="prewitt_active <= 2" :loading="prewittLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="prewitt_next">下一步
               </el-button>
@@ -247,8 +247,8 @@
               </el-button>
 
             </el-tab-pane>
-            <el-tab-pane label="理想低通滤波器">
-              <el-steps :active="ideal_filter_active" align-center finish-status="success"style="margin-top: 40px">
+            <el-tab-pane label="理想高通滤波器">
+              <el-steps :active="ideal_filter_active" align-center finish-status="success" style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -309,7 +309,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="ideal_filter_active <= 2" :loading="ideal_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="ideal_filter_next">下一步
               </el-button>
@@ -317,7 +317,7 @@
                          @click="cancel">完成
               </el-button>
             </el-tab-pane>
-            <el-tab-pane label="巴特沃斯低通滤波器">
+            <el-tab-pane label="巴特沃斯高通滤波器">
               <el-steps :active="barte_filter_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
@@ -390,7 +390,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="barte_filter_active <= 2" :loading="barte_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="barte_filter_next">下一步
               </el-button>
@@ -398,7 +398,7 @@
                          @click="cancel">完成
               </el-button>
             </el-tab-pane>
-            <el-tab-pane label="指数低通滤波器">
+            <el-tab-pane label="高斯高通滤波器">
               <el-steps :active="exp_filter_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
@@ -471,7 +471,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="exp_filter_active <= 2" :loading="exp_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="exp_filter_next">下一步
               </el-button>

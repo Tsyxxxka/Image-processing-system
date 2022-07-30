@@ -64,7 +64,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="gauss_noise_active <= 2" :loading="gauss_noiseLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="gauss_noise_next">下一步
               </el-button>
@@ -157,7 +157,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="sault_pepper_noise_active <= 2" :loading="sault_pepper_noiseLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="sault_pepper_noise_next">下一步
               </el-button>

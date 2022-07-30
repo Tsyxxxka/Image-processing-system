@@ -1,25 +1,27 @@
 <template>
-  <div style="width: 100%; max-height: 100%; margin-left: 250px;">
-    <el-button type="text" @click="freshData()" style="margin-top: 15px">刷新</el-button>
+  <div style="width: 100%; max-height: 100%;">
+    <el-button type="text" @click="freshData()" style="margin-top: 15px; margin-left: 30px;">刷新</el-button>
     <el-table
         ref="multipleTable"
         :data="fileList"
         tooltip-effect="dark"
-        height="320"
+        height="500"
+        width="500"
         style="width: 100%"
         @selection-change="handleSelectionChange">
       <el-table-column
           type="selection"
-          min-width="10%">
+          align="right"
+          min-width="20%">
       </el-table-column>
       <el-table-column
-          align="center"
+          align="left"
           prop="fileName"
           label="图片名称"
-          min-width="50%">
+          min-width="40%">
       </el-table-column>
       <el-table-column
-          align="center"
+          align="left"
           label="图片预览"
           min-width="40%">
         <template slot-scope="scope">

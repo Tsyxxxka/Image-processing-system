@@ -89,13 +89,10 @@ model = NeuralStyleTransferModel()
 M = settings.WIDTH * settings.HEIGHT
 N = 3
 
-# 使用Adma优化器
-optimizer = tf.keras.optimizers.Adam(settings.LEARNING_RATE)
-
 
 # 使用tf.function加速训练
 @tf.function
-def train_one_step(noise_image, target_content_features, target_style_features):
+def train_one_step(optimizer, noise_image, target_content_features, target_style_features):
     """
     一次迭代过程
     """
@@ -110,7 +107,12 @@ def train_one_step(noise_image, target_content_features, target_style_features):
     return loss
 
 
-def style_transfer(img_style_path, img_content_path, result_path):    
+def style_transfer(img_style_path, img_content_path, result_path, epoch, per_epoch, learn_rate):
+    learn_rate = learn_rate or settings.LEARNING_RATE
+    
+    # 使用Adma优化器
+    optimizer = tf.keras.optimizers.Adam(learning_rate=learn_rate)
+    
     # 加载内容图片
     content_image = utils.load_images(img_content_path)
     # 风格图片
@@ -124,15 +126,18 @@ def style_transfer(img_style_path, img_content_path, result_path):
     # 基于内容图片随机生成一张噪声图片
     noise_image = tf.Variable((content_image + np.random.uniform(-0.2, 0.2, (1, settings.HEIGHT, settings.WIDTH, 3))) / 2)
 
-    # 共训练settings.EPOCHS个epochs
-    for epoch in range(settings.EPOCHS):
+    epoch = epoch or settings.EPOCHS
+    per_epoch = per_epoch or settings.STEPS_PER_EPOCH
+
+    # 共训练epoch个epochs
+    for epo in range(epoch):
         # 使用tqdm提示训练进度
-        with tqdm(total=settings.STEPS_PER_EPOCH, desc='Epoch {}/{}'.format(epoch + 1, settings.EPOCHS)) as pbar:
-            # 每个epoch训练settings.STEPS_PER_EPOCH次
-            for step in range(settings.STEPS_PER_EPOCH):
-                _loss = train_one_step(noise_image, target_content_features, target_style_features)
+        with tqdm(total=per_epoch, desc='Epoch {}/{}'.format(epo + 1, epoch)) as pbar:
+            # 每个epoch训练per_epoch次
+            for step in range(per_epoch):
+                _loss = train_one_step(optimizer, noise_image, target_content_features, target_style_features)
                 pbar.set_postfix({'loss': '%.4f' % float(_loss)})
                 pbar.update(1)
             # 每个epoch保存一次图片
-    
+    print(222)
     utils.save_image(noise_image, result_path)

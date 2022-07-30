@@ -64,7 +64,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="gray_hist_active <= 2" :loading="gray_histLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="gray_hist_next">下一步
               </el-button>
@@ -122,7 +122,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="bgr_hist_active <= 2" :loading="bgr_histLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="bgr_hist_next">下一步
               </el-button>

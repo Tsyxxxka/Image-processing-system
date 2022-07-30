@@ -15,81 +15,6 @@
         <el-main style="text-align: left; font-size: 18px">
           {{ intromsg }}
           <el-tabs type="border-card" style="margin-top: 30px; min-height: 80%">
-            <el-tab-pane label="算数均值滤波">
-              <el-steps :active="arithmetic_average_filter_active" align-center finish-status="success"style="margin-top: 40px">
-                <el-step title="选择图片"></el-step>
-                <el-step title="输入参数"></el-step>
-                <el-step title="处理图片"></el-step>
-              </el-steps>
-
-              <div v-show="arithmetic_average_filter_active === 0" style="margin-top: 20px;">
-                <PictureChooseOne ref="arithmetic_average_filterSelection"/>
-              </div>
-
-              <div v-show="arithmetic_average_filter_active === 1"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div style="margin-left: 20%; margin-right: 20%">
-                  <el-form :model="arithmetic_average_filterForm" class="demo-form-inline">
-                    <el-form-item label="输出图像名称"
-                                  label-width="30%"
-                                  :rules="[
-                      { required: true, message: '名称不能为空'}
-                      ]"
-                                  style="align-content: center; margin-left: 10%; margin-right: 10%; width: 60%">
-                      <el-input v-model="arithmetic_average_filterForm.res_name">
-                        <template slot="append">.jpg</template>
-                      </el-input>
-                    </el-form-item>
-
-                    <el-form-item label="滤波器大小"
-                                  :rules="[
-                      { required: true, message: '像素值不能为空'},
-                      { type: 'number', message: '像素值必须为数字值'}
-                      ]"
-                                  style="align-content: center; margin-left: 10%; margin-right: 10%; width:80%">
-                      <el-col :span="7">
-                        <el-input placeholder="奇数，推荐3" v-model="arithmetic_average_filterForm.filter_size_p">
-                        </el-input>
-                      </el-col>
-                      <el-col class="line" :span="2">*</el-col>
-                      <el-col :span="7">
-                        <el-input placeholder="奇数，推荐3" v-model="arithmetic_average_filterForm.filter_size_q">
-                        </el-input>
-                      </el-col>
-                    </el-form-item>
-                  </el-form>
-                </div>
-              </div>
-
-              <div v-show="arithmetic_average_filter_active === 2"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div>
-                  <span class="demonstration">原图片</span>
-                  <br>
-                  <img :src="this.displayImg[0].fileUrl" alt=""
-                       style="width: auto; height: auto; max-width: 400px; max-height: 300px; margin-top: 30px">
-                </div>
-              </div>
-
-              <div v-show="arithmetic_average_filter_active === 3"
-                   style="text-align: center; margin-top: 20px; min-height: 375px; max-height: 375px">
-                <div>
-                  <span class="demonstration">结果图片</span>
-                  <br>
-                  <img :src="this.processResult.result_name" alt=""
-                       style="width: auto; height: auto; max-width: 400px; max-height: 300px; margin-top: 30px">
-                </div>
-              </div>
-
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
-              <el-button v-show="arithmetic_average_filter_active <= 2" :loading="arithmetic_average_filterLoad" style="margin-left: 10px; margin-top: 10px;"
-                         @click="arithmetic_average_filter_next">下一步
-              </el-button>
-              <el-button v-show="arithmetic_average_filter_active >= 3" :loading="arithmetic_average_filterLoad" style="margin-left: 10px; margin-top: 10px;"
-                         @click="cancel">完成
-              </el-button>
-
-            </el-tab-pane>
             <el-tab-pane label="几何均值滤波">
               <el-steps :active="geometric_average_filter_active" align-center finish-status="success"style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
@@ -156,7 +81,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="geometric_average_filter_active <= 2" :loading="geometric_average_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="geometric_average_filter_next">下一步
               </el-button>
@@ -231,7 +156,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="harmonic_average_filter_active <= 2" :loading="harmonic_average_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="harmonic_average_filter_next">下一步
               </el-button>
@@ -289,7 +214,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="min_filter_active <= 2" :loading="min_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="min_filter_next">下一步
               </el-button>
@@ -347,7 +272,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="max_filter_active <= 2" :loading="max_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="max_filter_next">下一步
               </el-button>
@@ -405,7 +330,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="max_filter_active <= 2" :loading="max_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="max_filter_next">下一步
               </el-button>
@@ -491,7 +416,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="range_filter_active <= 2" :loading="range_filterLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="range_filter_next">下一步
               </el-button>

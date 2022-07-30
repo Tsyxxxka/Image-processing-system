@@ -64,7 +64,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="graying_active <= 2" :loading="grayingLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="graying_next">下一步
               </el-button>
@@ -74,7 +74,7 @@
 
             </el-tab-pane>
             <el-tab-pane label="二值化">
-              <el-steps :active="thre_active" align-center finish-status="success"style="margin-top: 40px">
+              <el-steps :active="thre_active" align-center finish-status="success" style="margin-top: 40px">
                 <el-step title="选择图片"></el-step>
                 <el-step title="输入参数"></el-step>
                 <el-step title="处理图片"></el-step>
@@ -122,7 +122,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="thre_active <= 2" :loading="threLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="thre_next">下一步
               </el-button>
@@ -189,7 +189,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="flip_active <= 2" :loading="flipLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="flip_next">下一步
               </el-button>
@@ -266,7 +266,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="move_active <= 2" :loading="moveLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="move_next">下一步
               </el-button>
@@ -336,7 +336,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="rotate_active <= 2" :loading="rotateLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="rotate_next">下一步
               </el-button>
@@ -413,7 +413,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="resize_active <= 2" :loading="resizeLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="resize_next">下一步
               </el-button>

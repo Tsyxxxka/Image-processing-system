@@ -45,6 +45,27 @@
                         <template slot="append">.jpg</template>
                       </el-input>
                     </el-form-item>
+                    <el-form-item label="训练epoch次数（默认为1）"
+                                  label-width="30%"
+                                  style="align-content: center; margin-left: 10%; margin-right: 10%; width: 60%">
+                      <el-input v-model="gauss_noiseForm.epoch">
+                        <template slot="append">.jpg</template>
+                      </el-input>
+                    </el-form-item>
+                    <el-form-item label="每个epoch训练次数（默认为100）"
+                                  label-width="30%"
+                                  style="align-content: center; margin-left: 10%; margin-right: 10%; width: 60%">
+                      <el-input v-model="gauss_noiseForm.per_epoch">
+                        <template slot="append">.jpg</template>
+                      </el-input>
+                    </el-form-item>
+                    <el-form-item label="学习率（默认为0.03）"
+                                  label-width="30%"
+                                  style="align-content: center; margin-left: 10%; margin-right: 10%; width: 60%">
+                      <el-input v-model="gauss_noiseForm.learn_rate">
+                        <template slot="append">.jpg</template>
+                      </el-input>
+                    </el-form-item>
                   </el-form>
                 </div>
               </div>
@@ -69,7 +90,7 @@
                 </div>
               </div>
 
-              <el-button style="margin-left: 80%; margin-top: 30px;" @click="cancel">取消操作</el-button>
+              <el-button style="margin-left: 70%; margin-top: 30px;" @click="cancel">取消操作</el-button>
               <el-button v-show="gauss_noise_active <= 3" :loading="gauss_noiseLoad" style="margin-left: 10px; margin-top: 10px;"
                          @click="gauss_noise_next">下一步
               </el-button>
@@ -118,7 +139,10 @@ export default {
       },
       gauss_noise_active: 0,
       gauss_noiseForm: {
-        res_name: ''
+        res_name: '',
+        epoch: 1,
+        per_epoch: 100,
+        learn_rate: 0.03
       },
       gauss_noiseLoad: false,
       sault_pepper_noise_active: 0,
@@ -210,7 +234,10 @@ export default {
               params: {
                 img_style_name: this.selection_style[0].fileName,
                 img_content_name: this.selection_content[0].fileName,
-                result_name: this.gauss_noiseForm.res_name
+                result_name: this.gauss_noiseForm.res_name,
+                epoch: this.gauss_noiseForm.epoch,
+                per_epoch: this.gauss_noiseForm.per_epoch,
+                learn_rate: this.gauss_noiseForm.learn_rate
               }
             }
         ).then(
